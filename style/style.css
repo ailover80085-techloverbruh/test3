@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+/* ============================ Reset ================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background: #474544 url(bgtest.jpg) no-repeat center center fixed;
+  background-size: cover;
+  color: #7FFF00;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ========================= Overlay ============================ */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1;
+}
+
+/* ========================= Wrapper ========================== */
+#wrapper {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ============================ Header ======================= */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+img.logo {
+  height: 60px;
+  width: auto;
+}
+
+/*========================== Navigation ===================== */
+#mainnav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+#mainnav li a {
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+#mainnav li a:hover,
+#mainnav li.current a {
+  background: #e2a74f;
+  color: #000;
+}
+
+/* ================================ Content ============================ */
+#content {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#content h2, #content h3 {
+  margin: 1rem 0;
+  color: #00FFFF;
+}
+
+/* ================================== Footer ================================ */
+#footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+#footer img {
+  max-height: 50px;
+  margin-bottom: 0.5rem;
+}
+
+/* =================================== Responsive Navigation ===============================*/
+@media (max-width: 768px) {
+  #header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #mainnav {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  #mainnav li a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  img.logo {
+    height: 45px;
+  }
+}
